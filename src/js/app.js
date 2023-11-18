@@ -1,6 +1,7 @@
 import "../style/index.css";
 
 function render(variables = {}) {
+  console.log(variables);
   let cover = `<div class="cover"><img src="${variables.background}" /></div>`;
 
   if (variables.includeCover == false) cover = "<div class='cover'></div>";
@@ -13,7 +14,7 @@ function render(variables = {}) {
           <h3>${variables.city == null ? "Miami" : variables.city} , ${
     variables.country == null ? "USA" : variables.country
   }</h3>
-          <ul class="position-right">
+          <ul class="${variables.socialMediaPosition}">
             <li><a href="https://twitter.com/${
               variables.twitter == null ? "" : variables.twitter
             }"><i class="fab fa-twitter"></i></a></li>
@@ -71,3 +72,5 @@ window.onload = function() {
     });
   });
 };
+
+console.log(document.getElementById("widget_content"));
